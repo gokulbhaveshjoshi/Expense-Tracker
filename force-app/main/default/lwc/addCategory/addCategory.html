@@ -1,0 +1,19 @@
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </template>
+    <lightning-input label="Category Name" type="text" maxlength="20" onchange={handleChange}></lightning-input>
+    <template if:true={existCategories}>
+        <template for:each={existCategories} for:item="category">
+            <div class="slds-box" key={category.Id}>
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-1">
+                        <div class="slds-col slds-size_1-of-1 slds-align-middle">
+                            <h2>{category.Name}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </template>
+</template>

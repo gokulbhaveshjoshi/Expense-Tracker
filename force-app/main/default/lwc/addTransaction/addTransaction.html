@@ -1,0 +1,17 @@
+<template>
+    <div>
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </template>
+        
+        <lightning-input type="Date" label="Date" onchange={handleDateChange} value={transactionDate}></lightning-input>
+        <lightning-input type="currency" label="Amount" onchange={handleAmountChange} value={transactionAmount}></lightning-input>
+        <lightning-input type="text" label="Description" onchange={handleDescriptionChange}></lightning-input>
+        <lightning-select name="category" label="Select Category" 
+            options={categoryOptions}
+            value={transactionCategory}
+            placeholder="Select Category"
+            onchange={handleCategoryChange}>
+        </lightning-select>
+    </div>
+</template>

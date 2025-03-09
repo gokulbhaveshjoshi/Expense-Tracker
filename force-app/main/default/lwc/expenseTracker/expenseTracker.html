@@ -1,0 +1,27 @@
+<template>
+    <div class="slds-card slds-p-around_medium">
+        <article>
+            <div class="slds-text-heading_large">Let's Track Some Money!</div>
+            <div class="slds-grid slds-gutters ">
+                <div class="slds-col slds-box slds-m-around_x-small">
+                    <div class="slds-text-title">
+                        Earning
+                    </div>
+                    <div class="slds-text-heading_medium">
+                        {currMonthExpenses.Total_Earning__c}
+                    </div>
+                </div>
+                <div class="slds-col slds-box slds-m-around_x-small">
+                    <div class="slds-text-title">
+                        Expense
+                    </div>
+                    <div class="slds-text-heading_medium">
+                        {currMonthExpenses.Total_Expense__c}
+                    </div>
+                </div>
+            </div>
+            
+            <c-expense-utility onupdate={formUpdateHandler} current-record={recordId}></c-expense-utility>
+        </article>
+    </div>
+</template>
